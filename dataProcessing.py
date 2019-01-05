@@ -9,7 +9,7 @@ import  numpy as  np
 import  matplotlib as plt
 import pandas as  pd
 
-# importing  data 
+# importing  data from  data file 
 
 dataset=pd.read_csv('Data.csv')
 X=dataset.iloc[:,:-1].values
@@ -23,7 +23,7 @@ imputer=imputer.fit(X[:,1:3])
 X[:,1:3]=imputer.transform(X[:,1:3])
 
 
-# categorical data 
+# categorical data ,encoding  into  LabelEncoder  and  OneHotEncoder
 
 
 
@@ -42,7 +42,7 @@ from  sklearn.model_selection import train_test_split
 X_train,X_test,Y_train,Y_test =train_test_split(X,Y,test_size=0.2,random_state=0)
 
 
-#feature scaling
+#feature scaling of  Data
 from sklearn.preprocessing import StandardScaler
 
 sc_X=StandardScaler()
